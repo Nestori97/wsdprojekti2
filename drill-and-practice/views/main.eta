@@ -1,0 +1,21 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Welcome to the mainpage of my project </h1>
+  <p>
+  this project is used to add question and topics to the database to which you answer either by logging in and going to the path /quiz using navbar
+  <br>
+  Or you can use my api to get random question from a random topic and answer to it
+  <br>
+  If you register and login you can also add questions and answers to topics but only admins can make a new topic.
+  you can register using this link <a href="/auth/register" >Registeration</a>
+   <br>
+  or if you are already a user you can login using this link <a href="/auth/login" >Login</a>
+  <br>
+  Here are some statics from this project.
+  <br>
+  Currently we have <%= it.topics %> amount of topics
+  <br>
+  These topics have <%= it.questions %>  questions in them
+  <br>
+  And this is how many answers we have currently  recieved for our questions <%= it.answers%>
+</p>

@@ -1,0 +1,2 @@
+ <% layout("./layouts/layout.eta") %>
+ there are no questions so far for the topic <a href='/quiz/'>Click here to retunr to the main quiz page</a>

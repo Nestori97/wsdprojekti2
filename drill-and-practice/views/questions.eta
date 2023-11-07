@@ -1,0 +1,39 @@
+<% layout("./layouts/layout.eta") %>
+<script src="../static/code.js" defer></script>
+<h1>Add a question answer option for a question that is as follows " <%= it.questiontext %>"</h1>
+<% if (it.errors && it.errors.length > 0) { %>
+  <ul>
+    <% it.errors.forEach((error) => { %>
+      <li><%= error %></li>
+    <% }); %>
+  </ul>
+<% } %>
+<% if (it.answerOptions && it.answerOptions.length > 0) { %>
+  <ul>
+    <% it.answerOptions.forEach(answer => { %>
+      <li>
+      <%= answer.option_text %>
+       Is the answer corret:
+       <%= answer.is_correct  %> 
+       <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/options/<%= answer.id %>/delete">
+  <button type="submit">Delete option</button>
+</form>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No answer options available do you wish to delete the question.</p>
+  <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/delete">
+<button type="submit">Delete question</button>
+</form>
+<% } %>
+<form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/options">
+  <label for="question_text">Question Text:</label>
+  <input type="text" id="option_text" name="option_text"><%= it.testAnswerOptionText %>
+  <br>
+  <input type="checkbox" id="is_correct" name="is_correct">
+  <input type="hidden" name="correct" id="correct">
+  <label for="is_correct">Check this if the answer option is correct</label>
+  <br>
+  <button type="submit">Submit</button>
+</form>

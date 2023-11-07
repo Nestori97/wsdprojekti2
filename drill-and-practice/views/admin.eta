@@ -1,0 +1,7 @@
+<% layout("./layouts/layout.eta") %>
+The form below can be used to add admin right to given account, just write the correct email to the text box!
+<form method="POST" action="/auth/register/admin">
+ <label for="email">E-mail:</label>
+ <input type="email" name="email"/><br/>
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,17 @@
+<% layout("./layouts/layout.eta") %>
+<script src="../static/code.js" defer></script>
+<h1>Here are the answer options for a question that goes as follows " <%= it.questiontext %>"</h1>
+<% if (it.answerOptions && it.answerOptions.length > 0) { %>
+  <ul>
+    <% it.answerOptions.forEach(answer => { %>
+      <li>
+      <%= answer.option_text %>
+       <form method="POST" action="/quiz/<%= it.topicId %>/questions/<%= it.questionId %>/options/<%= answer.id %>">
+  <button type="submit">Choose</button>
+</form>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>"No answer options currently available for this question :() .</p>
+<% } %>
