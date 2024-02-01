@@ -7,7 +7,8 @@ This project can be found online in the following address https://questionsandto
 Project
 ----------------------------------------------------------------------------------------------------------------------
 This project allows you to make a topic, add question that relate to that topic, add answer options to those questions, and answer different recorded questions.
-There is also API that allows cross origin requests
+There is also API that allows cross origin requests   
+
 to be able to answer questions or add questions&answer options you must be registered user that has logged in 
 and to add or remove topics you must autheticated as admin, currently you can easily make yourself as admin by going to this path in the application /auth/register/admin
 and inputting the email of the account that you wish to give adminrights to this should make testing this application locally much easier.
