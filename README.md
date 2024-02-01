@@ -9,11 +9,13 @@ Project
 This project allows you to make a topic, add question that relate to that topic, add answer options to those questions, and answer different recorded questions.
 There is also API that allows cross origin requests   
 
-to be able to answer questions or add questions&answer options you must be registered user that has logged in 
-and to add or remove topics you must autheticated as admin, currently you can easily make yourself as admin by going to this path in the application /auth/register/admin
-and inputting the email of the account that you wish to give adminrights to this should make testing this application locally much easier.
+to be able to answer questions or add questions&answer options you must be registered user that has logged in, 
+and to add or remove topics you must be bautheticated as admin, currently you can easily make yourself as admin by going to this path in the application /auth/register/admin
+and inputting the email of the account that you wish to give adminrights to. This should make testing this application locally much easier but should never be implemented this way in any real world application.   
+
 To navigate the application on the upper end of hte web page there is a navbar where there are links to quiz and to topics so if you are stuck somewhere and have no clue how to get 
-back, you can allways use those two link to navagete to the two main function of this app
+back, you can allways use those two link to navagete to the two main function of this app   
+
 The project can be run from the run-locally.js file using these command in the terminal.
  docker compose up 
  deno run --unstable --allow-all --watch run-locally.js
@@ -23,7 +25,8 @@ The project can be run from the run-locally.js file using these command in the t
  Some notes
 ----------------------------------------------------------------------------------------------------------------------
 almost all of the data validation is done using self made validate function except the valdiation of is the input email as there I had to use validsaur as I did not know how to
-do it myself. Thats why there is 2 different valdiation methods.
+do it myself. Thats why there is 2 different valdiation methods.   
+
 Also this path /auth/register/admin and the functions for it were made to make it easier to test the application and  should never be made that way in any real application
 
  Tests
